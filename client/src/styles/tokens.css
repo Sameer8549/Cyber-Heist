@@ -1,0 +1,37 @@
+/* ═══════════════════════════════════════════════════════════════
+   CYBER HEIST — Design Tokens
+   Applied identically on every screen.
+   ═══════════════════════════════════════════════════════════════ */
+
+:root {
+  /* ── Color ── */
+  --void:     #0D0F12;   /* background — never pure black */
+  --panel:    #161A1F;   /* elevated surfaces */
+  --rust:     #C9552F;   /* THE ONLY accent */
+  --rust-dim: #8A3920;   /* rust at lower emphasis */
+  --signal:   #E8EAED;   /* primary text */
+  --static:   #6B7178;   /* metadata, timestamps */
+  --hairline: rgba(255,255,255,0.08); /* all borders */
+  --hairline-strong: rgba(255,255,255,0.14);
+
+  /* ── Typography ── */
+  --font-sans: 'Cabinet Grotesk', 'Outfit', system-ui, -apple-system, sans-serif;
+  --font-mono: 'JetBrains Mono', 'Cascadia Code', 'Fira Code', ui-monospace, monospace;
+
+  /* ── Easings (Emil Design Eng: custom curves only) ── */
+  --ease-out:    cubic-bezier(0.23, 1, 0.32, 1);
+  --ease-drawer: cubic-bezier(0.32, 0.72, 0, 1);
+  --ease-inout:  cubic-bezier(0.77, 0, 0.175, 1);
+
+  /* ── Spacing scale ── */
+  --sp-1: 4px;
+  --sp-2: 8px;
+  --sp-3: 12px;
+  --sp-4: 16px;
+  --sp-5: 20px;
+  --sp-6: 24px;
+  --sp-8: 32px;
+  --sp-10: 40px;
+  --sp-12: 48px;
+  --sp-16: 64px;
+}

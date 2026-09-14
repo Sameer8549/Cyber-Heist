@@ -1,0 +1,149 @@
+/* ═══════════════════════════════════════════════════════════════
+   CYBER HEIST — Global Styles
+   ═══════════════════════════════════════════════════════════════ */
+
+@import "./tokens.css";
+
+/* ── Self-hosted fonts ── */
+@font-face {
+  font-family: "Cabinet Grotesk";
+  src: url("/fonts/CabinetGrotesk-Regular.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Cabinet Grotesk";
+  src: url("/fonts/CabinetGrotesk-Medium.woff2") format("woff2");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Cabinet Grotesk";
+  src: url("/fonts/CabinetGrotesk-SemiBold.woff2") format("woff2");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Cabinet Grotesk";
+  src: url("/fonts/CabinetGrotesk-Bold.woff2") format("woff2");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "JetBrains Mono";
+  src: url("/fonts/JetBrainsMono-Regular.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "JetBrains Mono";
+  src: url("/fonts/JetBrainsMono-Medium.woff2") format("woff2");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* ── Reset ── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: auto; }
+body {
+  font-family: var(--font-sans);
+  background: var(--void);
+  color: var(--signal);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  min-height: 100dvh;
+  line-height: 1.5;
+}
+#root { min-height: 100dvh; display: flex; flex-direction: column; }
+
+/* ── Typography ── */
+h1,h2,h3,h4,h5,h6 {
+  font-family: var(--font-sans);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: var(--signal);
+  line-height: 1.15;
+}
+p { color: var(--signal); }
+code, .mono, .timer, .score, .hash, .ip, .path, .cipher, .fragment {
+  font-family: var(--font-mono);
+  font-variant-numeric: tabular-nums;
+}
+
+/* ── Base elements ── */
+button {
+  font-family: var(--font-sans);
+  cursor: pointer;
+  border: none;
+  outline: none;
+  transition: transform 160ms var(--ease-out), opacity 160ms var(--ease-out);
+}
+button:active { transform: scale(0.97); }
+input, textarea {
+  font-family: var(--font-mono);
+  background: var(--void);
+  color: var(--signal);
+  border: 1px solid var(--hairline);
+  outline: none;
+  transition: border-color 150ms var(--ease-out);
+}
+input:focus, textarea:focus { border-color: var(--rust); }
+a { color: var(--signal); text-decoration: none; }
+
+/* ── Scrollbar ── */
+::-webkit-scrollbar { width: 4px; height: 4px; }
+::-webkit-scrollbar-track { background: var(--void); }
+::-webkit-scrollbar-thumb { background: var(--hairline-strong); border-radius: 2px; }
+
+/* ── Utility classes ── */
+.rust { color: var(--rust); }
+.static { color: var(--static); }
+.panel { background: var(--panel); }
+.border-hairline { border: 1px solid var(--hairline); }
+.border-rust { border-color: var(--rust) !important; }
+.mono { font-family: var(--font-mono); }
+
+/* ── Btn variants ── */
+.btn-rust {
+  background: var(--rust);
+  color: var(--signal);
+  font-weight: 600;
+  font-size: 13px;
+  letter-spacing: 0.06em;
+  padding: 10px 20px;
+  border-radius: 4px;
+  font-family: var(--font-sans);
+  transition: background 150ms var(--ease-out), transform 160ms var(--ease-out);
+}
+.btn-rust:hover { background: #d9622f; }
+.btn-rust:disabled { background: var(--static); cursor: not-allowed; opacity: 0.5; }
+.btn-rust:active { transform: scale(0.97); }
+
+.btn-ghost {
+  background: transparent;
+  color: var(--static);
+  font-size: 12px;
+  letter-spacing: 0.05em;
+  padding: 8px 16px;
+  border: 1px solid var(--hairline);
+  border-radius: 4px;
+  font-family: var(--font-sans);
+  transition: color 150ms var(--ease-out), border-color 150ms var(--ease-out), transform 160ms var(--ease-out);
+}
+.btn-ghost:hover { color: var(--signal); border-color: var(--hairline-strong); }
+.btn-ghost:active { transform: scale(0.97); }
+
+/* ── prefers-reduced-motion ── */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
